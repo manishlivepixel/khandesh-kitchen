@@ -129,29 +129,3 @@
 })();
 
 
-// Language Switcher Logic
-document.addEventListener('DOMContentLoaded', () => {
-  const langSwitch = document.getElementById('langSwitch');
-  if(!langSwitch) return;
-  
-  // Read current language from cookie
-  const match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
-  if(match && match[1]) {
-    langSwitch.value = match[1];
-  } else {
-    langSwitch.value = 'en';
-  }
-
-  langSwitch.addEventListener('change', (e) => {
-    const lang = e.target.value;
-    if(lang === 'en') {
-      // Clear cookies to reset
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=' + location.hostname + '; path=/;';
-    } else {
-      document.cookie = `googtrans=/en/${lang}; path=/`;
-      document.cookie = `googtrans=/en/${lang}; domain=${location.hostname}; path=/`;
-    }
-    location.reload();
-  });
-});
