@@ -28,7 +28,7 @@ const i18n = {
   "← Back to Menu": { "en": "← Back to Menu", "mr": "← मेनूकडे परत", "hi": "← मेनू पर वापस" }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+function initTranslation() {
   const langSwitch = document.getElementById('langSwitch');
   if(!langSwitch) return;
   
@@ -52,4 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
   langSwitch.addEventListener('change', (e) => {
     applyLanguage(e.target.value);
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initTranslation);
+} else {
+  initTranslation();
+}
