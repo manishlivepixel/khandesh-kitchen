@@ -50,7 +50,14 @@
         <a href="#menu" class="nav__link">Menu</a>
         <a href="#gallery" class="nav__link">Gallery</a>
         <a href="#visit" class="nav__link">Visit Us</a>
-        <a href="tel:+919049932674" class="btn btn--gold btn--sm nav__cta">📞 Order on Call</a>
+        
+          <select id="langSwitch" class="lang-switch" aria-label="Change Language">
+            <option value="en">English</option>
+            <option value="mr">मराठी</option>
+            <option value="hi">हिंदी</option>
+          </select>
+          <a href="tel:+919049932674" class="btn btn--gold btn--sm nav__cta">📞 Order on Call</a>
+
       </nav>
 
       <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
@@ -430,5 +437,15 @@
   </div>
 
   <script src="js/main.js"></script>
+
+    <!-- Google Translate (Hidden) -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,mr,hi', autoDisplay: false}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
