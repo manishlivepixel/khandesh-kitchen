@@ -734,3 +734,6 @@ ul { list-style: none; }
   .marquee__track, .hero__chip, .call-fab, .hero__scroll span { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+.menu__item-clickable { cursor: pointer; transition: background .2s, transform .2s; border-radius: 12px; padding-inline: 10px; margin-inline: -10px; }
+.menu__item-clickable:hover { background: rgba(242, 182, 50, .05); transform: translateX(4px); }
